@@ -31,22 +31,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero h1 .first{display:block;color:var(--text);}
 .hero h1 .last{display:block;color:transparent;-webkit-text-stroke:1px var(--gold);}
 
-/* --- NEW CSS FOR THE PHOTO --- */
+/* --- PHOTO STYLING --- */
 .hero-photo {
-  width: 140px;
-  height: 140px;
+  width: 180px; 
+  height: 180px;
   object-fit: cover;
-  border-radius: 50%; /* Circle shape */
-  border: 2px solid var(--gold); /* Thin gold border */
-  padding: 5px; /* Creates space for the inner glow effect */
-  background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Deep shadow for pop */
-  margin-top: 1rem;
+  object-position: top;
+  border-radius: 20px; /* Modern rounded look */
+  border: 1px solid var(--line);
   margin-bottom: 2rem;
-  animation: fadeUp 0.8s 0.2s ease both; /* Syncs with h1 animation */
-  display: block; /* Ensures it starts on a new line on smaller screens */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: fadeUp 0.8s 0.2s ease both;
+  display: block;
 }
-/* --- END NEW CSS --- */
 
 .hero-divider{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);margin:2rem 0;animation:fadeUp 0.8s 0.2s ease both;}
 .hero-role{font-size:1.05rem;font-weight:300;color:var(--text2);line-height:1.5;animation:fadeUp 0.8s 0.3s ease both;}
@@ -162,7 +159,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
 .reveal.visible{opacity:1;transform:none;}
 .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
 @media(max-width:1024px){nav{padding:1rem 2rem;}.hero{grid-template-columns:1fr;padding:6rem 2rem 4rem;}.hero-right{display:none;}.section-wrap{padding:4rem 2rem;}.highlights-grid{grid-template-columns:1fr 1fr;}.skills-layout{grid-template-columns:1fr;gap:2rem;}.awards-layout{grid-template-columns:1fr 1fr;}.edu-section-grid{grid-template-columns:1fr;}.contact-strip-inner{grid-template-columns:1fr;gap:2rem;}.resp-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;padding:2rem;}}
-@media(max-width:640px){.nav-links,.nav-cta{display:none;}.highlights-grid{grid-template-columns:1fr;}.awards-layout{grid-template-columns:1fr;}.section-wrap{padding:3rem 1.5rem;}.section-title{font-size:1.8rem;}.contact-strip-inner{padding:3rem 1.5rem;}nav{padding:1rem 1.5rem;}}
+@media(max-width:640px){.nav-links,.nav-cta{display:none;}.highlights-grid{grid-template-columns:1fr;}.awards-layout{grid-template-columns:1fr;}.section-wrap{padding:3rem 1.5rem;}.section-title{font-size:1.8rem;}.contact-strip-inner{padding:3rem 1.5rem;}nav{padding:1rem 1.5rem;}.hero-photo{width:140px;height:140px;}}
 </style>
 </head>
 <body>
@@ -189,7 +186,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
       <span class="eyebrow-text">SDET · Automation Engineer</span>
     </div>
     
-    <img src="profile.jpg" alt="Mohit Ojha" class="hero-photo" />
+    <img src="profile.png" alt="Mohit Ojha" class="hero-photo" />
     
     <h1><span class="first">Mohit</span><span class="last">Ojha</span></h1>
     <div class="hero-divider"></div>
@@ -337,7 +334,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
 </div>
 
 <footer>
-  <div class="footer-left">© 2025 Mohit Ojha · All rights reserved</div>
+  <div class="footer-left">© 2026 Mohit Ojha · All rights reserved</div>
   <div class="footer-right">SDET · <span>Tata Consultancy Services</span> · Kolkata, India</div>
 </footer>
 
