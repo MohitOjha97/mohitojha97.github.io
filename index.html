@@ -12,10 +12,14 @@ html{scroll-behavior:smooth;}
 body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden;}
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--gold-dk);border-radius:2px;}
 .ambient{position:fixed;top:0;left:0;right:0;height:100vh;background:radial-gradient(ellipse 80% 60% at 15% 20%,rgba(201,168,76,0.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 85% 80%,rgba(42,157,143,0.05) 0%,transparent 60%);pointer-events:none;z-index:0;}
+
+/* NAVIGATION & BRANDING */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;border-bottom:1px solid var(--line2);background:rgba(10,10,15,0.88);backdrop-filter:blur(20px);transition:padding 0.3s;}
-.nav-brand{display:flex;align-items:center;gap:0.8rem;}
+.nav-brand{display:flex;align-items:center;gap:0.8rem;text-decoration:none;transition:opacity 0.2s;}
+.nav-brand:hover{opacity:0.8;}
 .nav-monogram{width:36px;height:36px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--gold);}
 .nav-name{font-size:0.82rem;font-weight:500;color:var(--text2);letter-spacing:0.12em;text-transform:uppercase;}
+
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);text-decoration:none;transition:color 0.2s;position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
@@ -23,37 +27,49 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links a:hover::after{transform:scaleX(1);}
 .nav-cta{font-family:var(--mono);font-size:0.72rem;color:var(--ink);background:var(--gold);padding:0.45rem 1.2rem;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:var(--gold-lt);}
+
+/* HERO SECTION */
 .hero{position:relative;z-index:1;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1300px;margin:0 auto;padding:7rem 4rem 4rem;gap:4rem;}
-.hero-eyebrow{display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;animation:fadeUp 0.8s ease both;}
+.hero-eyebrow{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem;animation:fadeUp 0.8s ease both;}
 .eyebrow-line{width:40px;height:1px;background:var(--gold);}
 .eyebrow-text{font-family:var(--mono);font-size:0.72rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;}
-.hero h1{font-family:var(--serif);font-size:clamp(3.5rem,6vw,5.5rem);font-weight:700;line-height:1.0;animation:fadeUp 0.8s 0.1s ease both;}
-.hero h1 .first{display:block;color:var(--text);}
-.hero h1 .last{display:block;color:transparent;-webkit-text-stroke:1px var(--gold);}
 
-/* --- PHOTO STYLING --- */
 .hero-photo {
-  width: 180px; 
-  height: 180px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 20px; /* Modern rounded look */
+  width: 280px; 
+  height: 380px;
+  object-fit: contain; 
+  background: rgba(255,255,255,0.03);
   border: 1px solid var(--line);
+  padding: 10px;
   margin-bottom: 2rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  animation: fadeUp 0.8s 0.2s ease both;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: fadeUp 0.8s 0.1s ease both;
   display: block;
 }
 
-.hero-divider{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);margin:2rem 0;animation:fadeUp 0.8s 0.2s ease both;}
-.hero-role{font-size:1.05rem;font-weight:300;color:var(--text2);line-height:1.5;animation:fadeUp 0.8s 0.3s ease both;}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap; 
+  animation: fadeUp 0.8s 0.2s ease both;
+  margin-bottom: 1rem;
+}
+.hero h1 .first { color: var(--text); padding-right: 0.3em; }
+.hero h1 .last { color: transparent; -webkit-text-stroke: 1px var(--gold); }
+
+.hero-divider{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);margin:1.5rem 0;animation:fadeUp 0.8s 0.3s ease both;}
+.hero-role{font-size:1.05rem;font-weight:300;color:var(--text2);line-height:1.5;animation:fadeUp 0.8s 0.4s ease both;}
 .hero-role strong{color:var(--text);font-weight:500;}
-.hero-summary{margin-top:1.5rem;font-size:0.92rem;color:var(--text3);line-height:1.9;max-width:500px;animation:fadeUp 0.8s 0.4s ease both;}
-.hero-actions{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;animation:fadeUp 0.8s 0.5s ease both;}
+.hero-summary{margin-top:1.5rem;font-size:0.92rem;color:var(--text3);line-height:1.9;max-width:500px;animation:fadeUp 0.8s 0.5s ease both;}
+.hero-actions{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;animation:fadeUp 0.8s 0.6s ease both;}
+
 .btn-gold{display:inline-flex;align-items:center;padding:0.75rem 2rem;background:var(--gold);color:var(--ink);font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
 .btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px);}
 .btn-ghost{display:inline-flex;align-items:center;padding:0.75rem 2rem;border:1px solid rgba(201,168,76,0.35);color:var(--gold);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
 .btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,0.06);}
+
 .hero-right{animation:fadeUp 0.8s 0.3s ease both;}
 .stats-panel{border:1px solid var(--line);background:rgba(26,26,38,0.5);backdrop-filter:blur(10px);padding:2.5rem;}
 .stats-panel-label{font-family:var(--mono);font-size:0.65rem;color:var(--text3);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--line2);}
@@ -66,12 +82,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .avail-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse2 2s infinite;}
 .avail-text{font-family:var(--mono);font-size:0.72rem;color:var(--teal-lt);}
 @keyframes pulse2{0%,100%{box-shadow:0 0 0 0 rgba(42,157,143,0.5);}50%{box-shadow:0 0 0 6px rgba(42,157,143,0);}}
+
+/* SECTIONS */
 .section-wrap{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:6rem 4rem;}
 .section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line2);}
 .section-label{font-family:var(--mono);font-size:0.68rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.5rem;}
 .section-title{font-family:var(--serif);font-size:2.4rem;font-weight:600;}
 .section-num{font-family:var(--serif);font-size:4rem;font-weight:700;color:rgba(201,168,76,0.08);line-height:1;}
 .full-divider{position:relative;z-index:1;height:1px;background:var(--line2);max-width:1300px;margin:0 auto;}
+
 .highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line2);border:1px solid var(--line2);}
 .hl-card{background:var(--ink2);padding:2rem;transition:background 0.25s;position:relative;overflow:hidden;}
 .hl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
@@ -81,6 +100,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hl-card h3{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.6rem;}
 .hl-card p{font-size:0.82rem;color:var(--text3);line-height:1.8;}
 .metric{color:var(--gold);font-weight:600;}
+
 .skills-layout{display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:start;}
 .skills-sidebar-title{font-family:var(--serif);font-size:1.6rem;margin-bottom:1.5rem;line-height:1.3;}
 .skills-sidebar p{font-size:0.85rem;color:var(--text3);line-height:1.9;}
@@ -93,11 +113,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .pill-gold:hover{background:rgba(201,168,76,0.18);}
 .pill-dim{background:rgba(255,255,255,0.03);color:var(--text2);border:1px solid var(--line2);}
 .pill-dim:hover{color:var(--text);}
+
 .exp-company-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem;padding:2rem;background:var(--ink2);border:1px solid var(--line2);border-left:3px solid var(--gold);}
 .exp-company-logo{width:52px;height:52px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.2rem;color:var(--gold);flex-shrink:0;}
 .exp-company-info h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:0.2rem;}
 .exp-company-info p{font-family:var(--mono);font-size:0.72rem;color:var(--text3);}
 .exp-company-tenure{margin-left:auto;font-family:var(--mono);font-size:0.72rem;color:var(--gold);border:1px solid rgba(201,168,76,0.25);padding:0.3rem 0.8rem;}
+
 .project-card{background:var(--ink2);border:1px solid var(--line2);margin-bottom:1.5rem;overflow:hidden;transition:border-color 0.25s;}
 .project-card:hover{border-color:rgba(201,168,76,0.2);}
 .project-card-head{padding:1.5rem 2rem;border-bottom:1px solid var(--line2);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
@@ -115,60 +137,45 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .resp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem 1.5rem;}
 .resp-item{font-size:0.82rem;color:var(--text2);line-height:1.6;padding-left:1rem;position:relative;}
 .resp-item::before{content:'—';position:absolute;left:0;color:var(--gold-dk);font-size:0.7rem;}
-.achievement-strip{margin-top:1.5rem;padding:1rem 1.5rem;background:rgba(201,168,76,0.04);border-left:2px solid var(--gold);}
-.achievement-strip p{font-size:0.82rem;color:var(--gold-lt);font-style:italic;}
-.achievement-strip p::before{content:'" ';}
-.achievement-strip p::after{content:' "';}
+
 .awards-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .award-item{padding:2rem;border:1px solid var(--line2);background:var(--ink2);position:relative;overflow:hidden;transition:border-color 0.25s;}
 .award-item:hover{border-color:rgba(201,168,76,0.2);}
-.award-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s;}
-.award-item:hover::after{opacity:1;}
-.award-icon2{font-size:1.8rem;margin-bottom:1rem;}
 .award-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;}
 .award-desc{font-size:0.8rem;color:var(--text3);line-height:1.7;}
+
 .edu-section-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
 .edu-card{background:var(--ink2);border:1px solid var(--line2);padding:2.5rem;}
 .edu-block-label{font-family:var(--mono);font-size:0.65rem;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.5rem;}
 .edu-degree{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:0.4rem;line-height:1.4;}
 .edu-school{font-size:0.85rem;color:var(--text2);margin-bottom:1.2rem;}
-.edu-chips{display:flex;gap:0.8rem;flex-wrap:wrap;}
-.edu-chip{font-family:var(--mono);font-size:0.68rem;padding:0.3rem 0.7rem;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.15);color:var(--gold-dk);}
-.cert-list{display:flex;flex-direction:column;gap:1.2rem;}
-.cert-entry{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1.2rem;border-bottom:1px solid var(--line2);}
-.cert-entry:last-child{border-bottom:none;padding-bottom:0;}
-.cert-icon2{width:36px;height:36px;flex-shrink:0;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
-.cert-title{font-size:0.85rem;font-weight:500;color:var(--text);margin-bottom:0.2rem;line-height:1.5;}
-.cert-platform2{font-family:var(--mono);font-size:0.65rem;color:var(--text3);}
+
 .contact-strip{position:relative;z-index:1;background:var(--ink2);border-top:1px solid var(--line2);}
 .contact-strip-inner{max-width:1300px;margin:0 auto;padding:5rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.contact-eyebrow{font-family:var(--mono);font-size:0.68rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem;}
 .contact-heading{font-family:var(--serif);font-size:2.2rem;font-weight:600;line-height:1.2;}
 .contact-right{display:flex;flex-direction:column;gap:1rem;}
 .contact-item{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border:1px solid var(--line2);text-decoration:none;transition:border-color 0.2s,background 0.2s;}
 .contact-item:hover{border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.03);}
-.contact-item-icon{width:36px;height:36px;flex-shrink:0;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:center;}
-.contact-item-label{font-family:var(--mono);font-size:0.62rem;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;}
-.contact-item-value{font-size:0.85rem;color:var(--text);font-weight:500;}
+
 footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line2);}
-.footer-left{font-family:var(--mono);font-size:0.68rem;color:var(--text3);}
-.footer-right{font-family:var(--mono);font-size:0.68rem;color:var(--text3);}
+.footer-left, .footer-right{font-family:var(--mono);font-size:0.68rem;color:var(--text3);}
 .footer-right span{color:var(--gold);}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:none;}
 .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
+
 @media(max-width:1024px){nav{padding:1rem 2rem;}.hero{grid-template-columns:1fr;padding:6rem 2rem 4rem;}.hero-right{display:none;}.section-wrap{padding:4rem 2rem;}.highlights-grid{grid-template-columns:1fr 1fr;}.skills-layout{grid-template-columns:1fr;gap:2rem;}.awards-layout{grid-template-columns:1fr 1fr;}.edu-section-grid{grid-template-columns:1fr;}.contact-strip-inner{grid-template-columns:1fr;gap:2rem;}.resp-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;padding:2rem;}}
-@media(max-width:640px){.nav-links,.nav-cta{display:none;}.highlights-grid{grid-template-columns:1fr;}.awards-layout{grid-template-columns:1fr;}.section-wrap{padding:3rem 1.5rem;}.section-title{font-size:1.8rem;}.contact-strip-inner{padding:3rem 1.5rem;}nav{padding:1rem 1.5rem;}.hero-photo{width:140px;height:140px;}}
+@media(max-width:640px){.nav-links,.nav-cta{display:none;}.highlights-grid{grid-template-columns:1fr;}.awards-layout{grid-template-columns:1fr;}.section-wrap{padding:3rem 1.5rem;}.section-title{font-size:1.8rem;}.contact-strip-inner{padding:3rem 1.5rem;}nav{padding:1rem 1.5rem;}.hero h1 { white-space: normal; } .hero-photo { width: 100%; height: auto; }}
 </style>
 </head>
-<body>
-<div class="ambient"></div>
+<body id="top"> <div class="ambient"></div>
 <nav>
-  <div class="nav-brand">
+  <a href="#top" class="nav-brand">
     <div class="nav-monogram">MO</div>
     <span class="nav-name">Mohit Ojha</span>
-  </div>
+  </a>
   <ul class="nav-links">
     <li><a href="#highlights">Highlights</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -176,7 +183,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
     <li><a href="#recognition">Recognition</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:omohit97@gmail.com" class="nav-cta">Hire Me</a>
+  <a href="#contact" class="nav-cta">Hire Me</a>
 </nav>
 
 <section class="hero">
@@ -186,14 +193,14 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
       <span class="eyebrow-text">SDET · Automation Engineer</span>
     </div>
     
-    <img src="profile.png" alt="Mohit Ojha" class="hero-photo" />
+    <img src="image_1a8c70.png" alt="Mohit Ojha" class="hero-photo" />
     
     <h1><span class="first">Mohit</span><span class="last">Ojha</span></h1>
     <div class="hero-divider"></div>
     <div class="hero-role"><strong>5.6 years</strong> crafting scalable automation frameworks —<br/>currently at <strong>Tata Consultancy Services</strong>, Kolkata</div>
-    <p class="hero-summary">Specialising in Playwright with TypeScript and Cucumber BDD. I build automation frameworks from scratch, eliminate flaky tests, and integrate quality gates into CI/CD pipelines — turning testing from a bottleneck into a competitive advantage.</p>
+    <p class="hero-summary">Specialising in Playwright with TypeScript and Cucumber BDD. I build automation frameworks from scratch, eliminate flaky tests, and integrate quality gates into CI/CD pipelines.</p>
     <div class="hero-actions">
-      <a href="mailto:omohit97@gmail.com" class="btn-gold">Get In Touch</a>
+      <a href="#contact" class="btn-gold">Get In Touch</a>
       <a href="https://www.linkedin.com/in/mohitojha97/" target="_blank" class="btn-ghost">View LinkedIn ↗</a>
     </div>
   </div>
@@ -204,8 +211,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
       <div class="stat-row"><div class="stat-label-text">Reduction in regression cycle time</div><div class="stat-val">~35 <span class="unit">%</span></div></div>
       <div class="stat-row"><div class="stat-label-text">BDD test steps authored</div><div class="stat-val">900<span class="unit">+</span></div></div>
       <div class="stat-row"><div class="stat-label-text">Automation coverage improvement</div><div class="stat-val">~40 <span class="unit">%</span></div></div>
-      <div class="stat-row"><div class="stat-label-text">BDD scenarios maintained</div><div class="stat-val">100<span class="unit">+</span></div></div>
-      <div class="avail-badge"><div class="avail-dot"></div><span class="avail-text">Open to opportunities · Kolkata, India</span></div>
+      <div class="avail-badge"><div class="avail-dot"></div><span class="avail-text">Open to opportunities · Kolkata</span></div>
     </div>
   </div>
 </section>
@@ -214,34 +220,26 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
 <section class="section-wrap" id="highlights">
   <div class="section-header reveal"><div><div class="section-label">// Key Highlights</div><h2 class="section-title">What Sets Me Apart</h2></div><div class="section-num">01</div></div>
   <div class="highlights-grid">
-    <div class="hl-card reveal"><div class="hl-num">01 —</div><h3>Framework Architect</h3><p>Built a <span class="metric">Playwright + TypeScript</span> automation framework from the ground up — modular, scalable, and designed for long-term maintainability.</p></div>
-    <div class="hl-card reveal d1"><div class="hl-num">02 —</div><h3>Execution Optimizer</h3><p>Reduced regression cycle time by <span class="metric">~35%</span> through parallel execution strategies and intelligent test design.</p></div>
-    <div class="hl-card reveal d2"><div class="hl-num">03 —</div><h3>Coverage Champion</h3><p>Expanded automation coverage by <span class="metric">~40%</span> across critical workflows, significantly reducing manual testing dependency.</p></div>
-    <div class="hl-card reveal"><div class="hl-num">04 —</div><h3>Stability Engineer</h3><p>Systematically identified and resolved flaky tests using advanced locator strategies and <span class="metric">Playwright auto-wait</span> capabilities.</p></div>
-    <div class="hl-card reveal d1"><div class="hl-num">05 —</div><h3>Cross-Browser Expert</h3><p>Deep hands-on experience with <span class="metric">BrowserStack</span> for parallel, cloud-based cross-browser testing at enterprise scale.</p></div>
-    <div class="hl-card reveal d2"><div class="hl-num">06 —</div><h3>CI/CD Integrator</h3><p>Seamlessly integrated automation suites into <span class="metric">Jenkins</span> pipelines for scheduled, on-demand, and triggered execution.</p></div>
+    <div class="hl-card reveal"><div class="hl-num">01 —</div><h3>Framework Architect</h3><p>Built a <span class="metric">Playwright + TypeScript</span> automation framework from the ground up — modular and scalable.</p></div>
+    <div class="hl-card reveal d1"><div class="hl-num">02 —</div><h3>Execution Optimizer</h3><p>Reduced regression cycle time by <span class="metric">~35%</span> through parallel execution strategies.</p></div>
+    <div class="hl-card reveal d2"><div class="hl-num">03 —</div><h3>Coverage Champion</h3><p>Expanded automation coverage by <span class="metric">~40%</span> across critical workflows.</p></div>
   </div>
 </section>
 
-<div class="full-divider"></div>
 <section class="section-wrap" id="skills">
   <div class="section-header reveal"><div><div class="section-label">// Technical Skills</div><h2 class="section-title">Technology Stack</h2></div><div class="section-num">02</div></div>
   <div class="skills-layout">
     <div class="reveal">
       <h3 class="skills-sidebar-title">Tools I use to build quality software.</h3>
-      <p>Specialised in modern automation tooling with a focus on Playwright and TypeScript. Experienced across the full testing lifecycle — from framework design to CI integration.</p>
     </div>
     <div class="reveal d1">
       <div class="skill-category"><div class="skill-cat-label">Primary Automation</div><div class="skill-pills"><span class="pill pill-gold">Playwright</span><span class="pill pill-dim">Selenium WebDriver</span></div></div>
       <div class="skill-category"><div class="skill-cat-label">Languages</div><div class="skill-pills"><span class="pill pill-gold">TypeScript</span><span class="pill pill-dim">Java</span></div></div>
-      <div class="skill-category"><div class="skill-cat-label">Frameworks & BDD</div><div class="skill-pills"><span class="pill pill-gold">Cucumber BDD</span><span class="pill pill-dim">TestNG</span></div></div>
-      <div class="skill-category"><div class="skill-cat-label">Tools & Platforms</div><div class="skill-pills"><span class="pill pill-dim">Node.js</span><span class="pill pill-dim">Maven</span><span class="pill pill-dim">Jenkins</span><span class="pill pill-dim">BrowserStack</span><span class="pill pill-dim">Git</span><span class="pill pill-dim">AWS CodeCommit</span></div></div>
-      <div class="skill-category"><div class="skill-cat-label">Methodologies</div><div class="skill-pills"><span class="pill pill-gold">Page Object Model</span><span class="pill pill-dim">Parallel Execution</span><span class="pill pill-dim">Flaky Test Handling</span><span class="pill pill-dim">CI/CD Integration</span><span class="pill pill-dim">Test Design</span></div></div>
+      <div class="skill-category"><div class="skill-cat-label">Tools & Platforms</div><div class="skill-pills"><span class="pill pill-dim">Node.js</span><span class="pill pill-dim">Jenkins</span><span class="pill pill-dim">BrowserStack</span><span class="pill pill-dim">Git</span></div></div>
     </div>
   </div>
 </section>
 
-<div class="full-divider"></div>
 <section class="section-wrap" id="experience">
   <div class="section-header reveal"><div><div class="section-label">// Professional Experience</div><h2 class="section-title">Career Timeline</h2></div><div class="section-num">03</div></div>
   <div class="exp-company-header reveal">
@@ -251,91 +249,43 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
   </div>
   <div class="project-card reveal">
     <div class="project-card-head">
-      <div><div class="project-title">Digital Advice</div><div class="project-meta-row"><span class="project-meta-item">⏱ 3 Years</span><span class="project-meta-item">👥 Team of 7</span></div></div>
+      <div><div class="project-title">Digital Advice</div><div class="project-meta-row"><span class="project-meta-item">⏱ 3 Years</span></div></div>
       <div class="project-status status-current"><span class="dot"></span>Current Project</div>
     </div>
     <div class="project-card-body">
-      <div class="tech-row"><span class="t-tag">Playwright</span><span class="t-tag">TypeScript</span><span class="t-tag">Node.js</span><span class="t-tag">Cucumber BDD</span><span class="t-tag">BrowserStack</span><span class="t-tag">Git</span></div>
+      <div class="tech-row"><span class="t-tag">Playwright</span><span class="t-tag">TypeScript</span><span class="t-tag">Cucumber BDD</span></div>
       <div class="responsibilities-label">Responsibilities</div>
       <div class="resp-grid">
-        <div class="resp-item">Designed and developed a scalable automation framework from scratch using Playwright with TypeScript</div>
-        <div class="resp-item">Implemented modular POM architecture with reusable utilities, hooks, and configuration management</div>
-        <div class="resp-item">Designed and maintained 100+ BDD scenarios with ~900+ test steps covering critical end-to-end workflows</div>
-        <div class="resp-item">Implemented parallel test execution via Playwright and BrowserStack, reducing regression time by ~35%</div>
-        <div class="resp-item">Leveraged Playwright fixtures for efficient test setup and dependency management</div>
-        <div class="resp-item">Built retry mechanisms to handle intermittent failures and improve overall test stability</div>
-        <div class="resp-item">Integrated custom Cucumber HTML reports for enhanced visibility and post-run analysis</div>
-        <div class="resp-item">Resolved flaky tests by improving locator strategies and Playwright auto-wait features</div>
-        <div class="resp-item">Collaborated cross-functionally with developers and QA teams to improve testability</div>
-      </div>
-      <div class="achievement-strip"><p>Successfully built the automation framework from scratch — received client appreciation for improving execution efficiency and reliability</p></div>
-    </div>
-  </div>
-  <div class="project-card reveal">
-    <div class="project-card-head">
-      <div><div class="project-title" style="color:var(--text2);">Digital Retirement Advice</div><div class="project-meta-row"><span class="project-meta-item">⏱ 2.5 Years</span><span class="project-meta-item">👥 Team of 6</span></div></div>
-      <div class="project-status status-past">Previous Project</div>
-    </div>
-    <div class="project-card-body">
-      <div class="tech-row"><span class="t-tag">Selenium WebDriver</span><span class="t-tag">Java</span><span class="t-tag">TestNG</span><span class="t-tag">Maven</span><span class="t-tag">Jenkins</span><span class="t-tag">BrowserStack</span></div>
-      <div class="responsibilities-label">Responsibilities</div>
-      <div class="resp-grid">
-        <div class="resp-item">Developed and maintained automation test scripts using Selenium WebDriver with Java</div>
-        <div class="resp-item">Created and executed 100+ test cases (~800+ test steps) for regression and functional testing</div>
-        <div class="resp-item">Designed TestNG-based automation framework and managed execution cycles</div>
-        <div class="resp-item">Integrated automation suite with Jenkins CI/CD pipelines for scheduled and on-demand runs</div>
-        <div class="resp-item">Performed cross-browser testing across multiple environments using BrowserStack</div>
-        <div class="resp-item">Contributed to expanding automation coverage and reducing manual testing effort</div>
+        <div class="resp-item">Designed and developed a scalable automation framework from scratch using Playwright</div>
+        <div class="resp-item">Implemented parallel test execution, reducing regression time by ~35%</div>
+        <div class="resp-item">Resolved flaky tests by improving locator strategies and auto-wait features</div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="full-divider"></div>
 <section class="section-wrap" id="recognition">
   <div class="section-header reveal"><div><div class="section-label">// Awards & Recognition</div><h2 class="section-title">Achievements</h2></div><div class="section-num">04</div></div>
   <div class="awards-layout">
-    <div class="award-item reveal"><div class="award-icon2">⚡</div><div class="award-name">On-the-Spot Awards</div><div class="award-desc">Received multiple times for proactive contributions, quick problem-solving, and consistent client-facing support.</div></div>
-    <div class="award-item reveal d1"><div class="award-icon2">🏆</div><div class="award-name">Best Team Award</div><div class="award-desc">Awarded consecutively in 2025 & 2026, recognising outstanding collaboration, quality delivery, and team cohesion.</div></div>
-    <div class="award-item reveal d2"><div class="award-icon2">🌟</div><div class="award-name">Special Initiative Awards</div><div class="award-desc">Recognised multiple times for organising team events and driving engagement beyond core responsibilities.</div></div>
+    <div class="award-item reveal"><div class="award-name">On-the-Spot Awards</div><div class="award-desc">Received multiple times for proactive contributions and consistent client-facing support.</div></div>
+    <div class="award-item reveal d1"><div class="award-name">Best Team Award</div><div class="award-desc">Awarded consecutively in 2025 & 2026 for outstanding collaboration and quality delivery.</div></div>
   </div>
 </section>
 
-<div class="full-divider"></div>
-<section class="section-wrap" id="education">
-  <div class="section-header reveal"><div><div class="section-label">// Education & Certifications</div><h2 class="section-title">Learning Foundation</h2></div><div class="section-num">05</div></div>
-  <div class="edu-section-grid">
-    <div class="edu-card reveal">
-      <div class="edu-block-label">Education</div>
-      <div class="edu-degree">B.Tech — Electronics & Communication Engineering</div>
-      <div class="edu-school">Kalyani Government Engineering College, West Bengal</div>
-      <div class="edu-chips"><span class="edu-chip">2016 – 2020</span><span class="edu-chip">CGPA: 8.3</span></div>
-    </div>
-    <div class="edu-card reveal d1">
-      <div class="edu-block-label">Certifications</div>
-      <div class="cert-list">
-        <div class="cert-entry"><div class="cert-icon2">🎓</div><div><div class="cert-title">Selenium WebDriver with Java — Basics to Advanced + Frameworks</div><div class="cert-platform2">Udemy · Verified Certificate</div></div></div>
-        <div class="cert-entry"><div class="cert-icon2">🎓</div><div><div class="cert-title">Playwright JS/TS Automation Testing from Scratch & Framework</div><div class="cert-platform2">Udemy · Verified Certificate</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="full-divider"></div>
 <div class="contact-strip" id="contact">
   <div class="contact-strip-inner">
-    <div class="reveal"><div class="contact-eyebrow">// Let's Connect</div><h2 class="contact-heading">Open to new<br/>opportunities.</h2></div>
+    <div class="reveal"><h2 class="contact-heading">Open to new<br/>opportunities.</h2></div>
     <div class="contact-right reveal d1">
-      <a href="mailto:omohit97@gmail.com" class="contact-item"><div class="contact-item-icon">📧</div><div><div class="contact-item-label">Email</div><div class="contact-item-value">omohit97@gmail.com</div></div></a>
-      <a href="tel:+918240290252" class="contact-item"><div class="contact-item-icon">📞</div><div><div class="contact-item-label">Phone</div><div class="contact-item-value">+91 82402 90252</div></div></a>
-      <a href="https://www.linkedin.com/in/mohitojha97/" target="_blank" class="contact-item"><div class="contact-item-icon">💼</div><div><div class="contact-item-label">LinkedIn</div><div class="contact-item-value">linkedin.com/in/mohitojha97</div></div></a>
+      <a href="mailto:omohit97@gmail.com" class="contact-item">📧 omohit97@gmail.com</a>
+      <a href="tel:+918240290252" class="contact-item">📞 +91 82402 90252</a>
+      <a href="https://www.linkedin.com/in/mohitojha97/" target="_blank" class="contact-item">💼 linkedin.com/in/mohitojha97</a>
     </div>
   </div>
 </div>
 
 <footer>
-  <div class="footer-left">© 2026 Mohit Ojha · All rights reserved</div>
-  <div class="footer-right">SDET · <span>Tata Consultancy Services</span> · Kolkata, India</div>
+  <div class="footer-left">© 2026 Mohit Ojha</div>
+  <div class="footer-right">SDET · <span>Tata Consultancy Services</span> · Kolkata</div>
 </footer>
 
 <script>
@@ -343,7 +293,7 @@ const reveals=document.querySelectorAll('.reveal');
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.08});
 reveals.forEach(el=>io.observe(el));
 const nav=document.querySelector('nav');
-window.addEventListener('scroll',()=>{const p=window.scrollY>60?(window.innerWidth>768?'0.8rem 4rem':'0.8rem 1.5rem'):(window.innerWidth>768?'1.2rem 4rem':'1rem 1.5rem');nav.style.padding=p;});
+window.addEventListener('scroll',()=>{const p=window.scrollY>60?'0.8rem 4rem':'1.2rem 4rem';nav.style.padding=p;});
 </script>
 </body>
 </html>
