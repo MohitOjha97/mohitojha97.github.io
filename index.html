@@ -4,6 +4,10 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Mohit Ojha · SDET & Automation Engineer</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{--ink:#0a0a0f;--ink2:#12121a;--ink3:#1a1a26;--gold:#c9a84c;--gold-lt:#e8d08a;--gold-dk:#9a7530;--teal:#2a9d8f;--teal-lt:#4dc4b6;--line:rgba(201,168,76,0.18);--line2:rgba(255,255,255,0.06);--text:#e8e6e0;--text2:#9b9890;--text3:#6b6866;--sans:'DM Sans',sans-serif;--serif:'Playfair Display',serif;--mono:'DM Mono',monospace;}
@@ -12,35 +16,25 @@ html{scroll-behavior:smooth;}
 body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden;}
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--gold-dk);border-radius:2px;}
 .ambient{position:fixed;top:0;left:0;right:0;height:100vh;background:radial-gradient(ellipse 80% 60% at 15% 20%,rgba(201,168,76,0.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 85% 80%,rgba(42,157,143,0.05) 0%,transparent 60%);pointer-events:none;z-index:0;}
-
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;border-bottom:1px solid var(--line2);background:rgba(10,10,15,0.88);backdrop-filter:blur(20px);transition:padding 0.3s;}
-
-/* BRAND AS HOME LINK */
 .nav-brand{display:flex;align-items:center;gap:0.8rem;text-decoration:none;transition:opacity 0.2s;}
 .nav-brand:hover{opacity:0.8;}
 .nav-monogram{width:36px;height:36px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--gold);}
 .nav-name{font-size:0.82rem;font-weight:500;color:var(--text2);letter-spacing:0.12em;text-transform:uppercase;}
-
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);text-decoration:none;transition:color 0.2s;position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a:hover::after{transform:scaleX(1);}
-
 .nav-cta{font-family:var(--mono);font-size:0.72rem;color:var(--ink);background:var(--gold);padding:0.45rem 1.2rem;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:var(--gold-lt);}
-
 .hero{position:relative;z-index:1;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1300px;margin:0 auto;padding:7rem 4rem 4rem;gap:4rem;}
 .hero-eyebrow{display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;animation:fadeUp 0.8s ease both;}
 .eyebrow-line{width:40px;height:1px;background:var(--gold);}
 .eyebrow-text{font-family:var(--mono);font-size:0.72rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;}
-
-/* SINGLE LINE NAME */
 .hero h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;line-height:1.1;animation:fadeUp 0.8s 0.1s ease both;white-space:nowrap;}
 .hero h1 .first{display:inline;color:var(--text);margin-right:0.3em;}
 .hero h1 .last{display:inline;color:transparent;-webkit-text-stroke:1px var(--gold);}
-
-/* PHOTO ADJUSTMENT */
 .hero-photo {
   width: 200px; 
   height: 200px;
@@ -53,7 +47,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
   animation: fadeUp 0.8s 0.2s ease both;
   display: block;
 }
-
 .hero-divider{width:48px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:2rem 0;animation:fadeUp 0.8s 0.2s ease both;}
 .hero-role{font-size:1.05rem;font-weight:300;color:var(--text2);line-height:1.5;animation:fadeUp 0.8s 0.3s ease both;}
 .hero-role strong{color:var(--text);font-weight:500;}
@@ -195,7 +188,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
       <span class="eyebrow-text">SDET · Automation Engineer</span>
     </div>
     
-    <img src="profile.png" alt="Mohit Ojha" class="hero-photo" />
+    <img src="profile.jpg" alt="Mohit Ojha" class="hero-photo" />
     
     <h1><span class="first">Mohit</span><span class="last">Ojha</span></h1>
     <div class="hero-divider"></div>
