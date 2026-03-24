@@ -17,27 +17,15 @@ body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--gold-dk);border-radius:2px;}
 .ambient{position:fixed;top:0;left:0;right:0;height:100vh;background:radial-gradient(ellipse 80% 60% at 15% 20%,rgba(201,168,76,0.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 85% 80%,rgba(42,157,143,0.05) 0%,transparent 60%);pointer-events:none;z-index:0;}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;border-bottom:1px solid var(--line2);background:rgba(10,10,15,0.88);backdrop-filter:blur(20px);transition:padding 0.3s;}
-
-/* BRAND STYLING */
-.nav-brand{display:flex;align-items:center;gap:0.8rem;text-decoration:none;position:relative;}
+.nav-brand{display:flex;align-items:center;gap:0.8rem;text-decoration:none;transition:opacity 0.2s;}
+.nav-brand:hover{opacity:0.8;}
 .nav-monogram{width:36px;height:36px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--gold);}
-.nav-name{font-size:0.82rem;font-weight:500;color:var(--text2);letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s;}
-
-/* HOVER & ACTIVE SCROLLSPY STATE FOR BRAND */
-.nav-brand::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
-.nav-brand:hover::after, .nav-brand.active::after{transform:scaleX(1);}
-.nav-brand:hover .nav-name, .nav-brand.active .nav-name{color:var(--gold);}
-
+.nav-name{font-size:0.82rem;font-weight:500;color:var(--text2);letter-spacing:0.12em;text-transform:uppercase;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);text-decoration:none;transition:color 0.2s;position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a:hover::after{transform:scaleX(1);}
-
-/* ACTIVE SCROLLSPY STATE FOR LINKS */
-.nav-links a.active {color:var(--gold);}
-.nav-links a.active::after {transform:scaleX(1);}
-
 .nav-cta{font-family:var(--mono);font-size:0.72rem;color:var(--ink);background:var(--gold);padding:0.45rem 1.2rem;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:var(--gold-lt);}
 .hero{position:relative;z-index:1;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1300px;margin:0 auto;padding:7rem 4rem 4rem;gap:4rem;}
@@ -169,7 +157,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
 .footer-right{font-family:var(--mono);font-size:0.68rem;color:var(--text3);}
 .footer-right span{color:var(--gold);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity:opacity 0.7s ease,transform 0.7s ease;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:none;}
 .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
 @media(max-width:1024px){nav{padding:1rem 2rem;}.hero{grid-template-columns:1fr;padding:6rem 2rem 4rem;}.hero-right{display:none;}.section-wrap{padding:4rem 2rem;}.highlights-grid{grid-template-columns:1fr 1fr;}.skills-layout{grid-template-columns:1fr;gap:2rem;}.awards-layout{grid-template-columns:1fr 1fr;}.edu-section-grid{grid-template-columns:1fr;}.contact-strip-inner{grid-template-columns:1fr;gap:2rem;}.resp-grid{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;padding:2rem;}}
@@ -179,7 +167,7 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
 <body>
 <div class="ambient"></div>
 <nav>
-  <a href="#" class="nav-brand active">
+  <a href="#" class="nav-brand">
     <div class="nav-monogram">MO</div>
     <span class="nav-name">Mohit Ojha</span>
   </a>
@@ -208,7 +196,6 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
     <p class="hero-summary">Specialising in Playwright with TypeScript and Cucumber BDD. I build automation frameworks from scratch, eliminate flaky tests, and integrate quality gates into CI/CD pipelines — turning testing from a bottleneck into a competitive advantage.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-gold">Get In Touch</a>
-      
       <a href="https://www.linkedin.com/in/mohitojha97/" target="_blank" class="btn-ghost">View LinkedIn ↗</a>
     </div>
   </div>
@@ -356,38 +343,11 @@ footer{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:2rem 4
 </footer>
 
 <script>
-// Fade up animations
 const reveals=document.querySelectorAll('.reveal');
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.08});
 reveals.forEach(el=>io.observe(el));
-
-// Shrinking Nav on scroll
 const nav=document.querySelector('nav');
 window.addEventListener('scroll',()=>{const p=window.scrollY>60?(window.innerWidth>768?'0.8rem 4rem':'0.8rem 1.5rem'):(window.innerWidth>768?'1.2rem 4rem':'1rem 1.5rem');nav.style.padding=p;});
-
-// Active Scrollspy highlighting 
-const sectionsForSpy = document.querySelectorAll('section.hero, section.section-wrap, div.contact-strip');
-const spyObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Remove active class from all nav links and brand
-      document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
-      document.querySelector('.nav-brand').classList.remove('active');
-      
-      // If at the very top hero section, highlight the brand name
-      if (entry.target.classList.contains('hero')) {
-        document.querySelector('.nav-brand').classList.add('active');
-      } else {
-        // Otherwise, highlight the corresponding section link
-        const id = entry.target.getAttribute('id');
-        const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-        if (link) link.classList.add('active');
-      }
-    }
-  });
-}, { rootMargin: "-40% 0px -50% 0px" }); // Triggers near the middle of the screen
-
-sectionsForSpy.forEach(sec => spyObserver.observe(sec));
 </script>
 </body>
 </html>
